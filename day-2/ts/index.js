@@ -1,15 +1,3 @@
 "use strict";
-function convertBinary(num) {
-    let bits = "";
-    while (num > 0) {
-        bits = (num % 2) + bits;
-        num = Math.floor(num / 2);
-    }
-    return bits;
-}
-function countBits(num) {
-    const binary = convertBinary(num);
-    let bitOne = 0;
-    binary.split("").map((bit) => (parseInt(bit) === 1 ? bitOne++ : 0));
-    return bitOne;
-}
+const countBits = (num) => num.toString(2).split("0").join("").length;
+console.log(countBits(1234));
